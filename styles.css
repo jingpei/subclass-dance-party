@@ -44,32 +44,57 @@ body, a:link, a:visited, a:active{
   top: -50%;
   left: -50%;
 }
-.flyerdancer {
+
+.flyerdancer{
+  background-image: url('assets/flylefttoright.gif');
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 200px;
+  height: 200px;
+
+}
+.flyerdancer.motion {
+  -webkit-animation: FlyUp 3s infinite;
+  animation: FlyUp 3s infinite;
+}
+@-webkit-keyframes FlyUp{
+  0% {top: 200px;}
+  50% {top: 0px;}
+  100% {top: 200;}
+}
+
+.running-dancer {
   background-size: cover;
-  width: 150px;
-  height: 150px;
+  width: 222px;
+  height: 158px;
+}
+.running-dancer.motion {
   -webkit-animation: BackAndForth 3s infinite;
   animation: BackAndForth 3s infinite;
 }
+
 @-webkit-keyframes BackAndForth {
   0% {margin-left: 0px;}
-  50% {margin-left: -300px;}
+  50% {margin-left: -600px;}
   100% {margin-left: 0px;}
 }
-.flyerdancer span {
-  background-image: url('assets/flyrighttoleft.gif');
+.running-dancer span {
+  background-image: url('assets/runpikachurighttoleft.gif');
+  height: 100%;
+  width: 100%;
+  display: block;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.running-dancer.motion span {
   -webkit-animation: Flip 3s steps(1) infinite;
   -webkit-animation-fill-mode: forwards;
   animation: Flip 3s steps(15) infinite;
   animation-fill-mode: forwards;
-  height: 100%;
-  width: 100%;
-  display: block;
-  background-size: cover;
 }
 @-webkit-keyframes Flip{
-  0% {background-image: url('assets/flyrighttoleft.gif');}
-  50% {background-image: url('assets/flylefttoright.gif');}
+  0% {background-image: url('assets/runpikachurighttoleft.gif');}
+  50% {background-image: url('assets/runpikachulefttoright.gif');}
 }
 @keyframes Flip{
   0% {left: 800;}
@@ -103,6 +128,13 @@ body, a:link, a:visited, a:active{
 }
 .pokeball img {
   width: 100%;
+  -webkit-animation: Wobble 0.5s;
+}
+
+@-webkit-keyframes Wobble{
+  0% {transform: rotate(30deg);}
+  50% {transform: rotate(-30deg);}
+  100% {transform: rotate(30deg);}
 }
 
 .catchem {

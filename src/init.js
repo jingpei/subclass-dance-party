@@ -51,6 +51,9 @@ $(document).ready(function(){
     if($isPokeballOpen === true){
       $(this).stop();
       $(this).css({"width": "50px", "height": "50px", "bottom" : "70px", "top": "auto", "left": "70px"});
+      if ($(this).hasClass("motion")) {
+        $(this).removeClass("motion");
+      }
       $(this).fadeOut("slow", function() {
         $(this).remove();
       });

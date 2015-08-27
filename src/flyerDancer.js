@@ -1,7 +1,7 @@
 var makeFlyerDancer = function(top, left, timeBetweenSteps){
   makeDancer.call(this, top, left, timeBetweenSteps);
-  this.$node.addClass("flyerdancer"); 
-  this.$node.append("<span></span>")
+  this.$node.addClass("flyerdancer motion"); 
+  // this.$node.append("<span></span>")
 }
 
 makeFlyerDancer.prototype = Object.create(makeDancer.prototype);
