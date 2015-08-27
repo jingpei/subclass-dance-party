@@ -35,6 +35,10 @@ $(document).ready(function(){
       // window.dancers[i].$node.lineUp();
       window.dancers[i].lineUp();
     };
-  })
+  });
+
+  $(".clearAll").on("click", function(event){
+    $('.dancer').remove();
+  });
 });
 

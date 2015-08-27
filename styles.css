@@ -9,14 +9,14 @@ body{
 body, a:link, a:visited, a:active{
   color: #333;
 }
-.title, .addDancerButton, .makeLineButton{
+.title, .button {
   padding:5px 12px;
   float:right;
   background: lightblue;
   border-radius: 5px;
   margin: 5px 5px 0 0;
 }
-.addDancerButton:hover, .makeLineButton:hover {
+.button:hover {
   background-color: #fff;
 }
 .topbar{
