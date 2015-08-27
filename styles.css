@@ -5,6 +5,9 @@ body{
   margin: 0px;
   background-color:#444;
   font-size: 18px;
+  background: url('assets/bg.jpg') 0 0 no-repeat;
+  background-size: cover;
+  position: relative;
 }
 body, a:link, a:visited, a:active{
   color: #333;
@@ -30,25 +33,59 @@ body, a:link, a:visited, a:active{
 .dancer{
   /*border:10px solid red;*/
   background: red;
-  border-radius:50%;
   width: 30px;
   height: 30px;
   position:absolute;
-  z-index: -1;
+  z-index: 999;
+}
+.dancer:hover {
+  cursor: pointer;
 }
 .dancer img {
   top: -50%;
   left: -50%;
 }
-.squaredancer {
-  background: url('assets/flyingpikachu.gif');
-  background-size: 200px 200px;
-  width: 200px;
-  height: 200px;
+.flyerdancer {
+  background: url('assets/flyrighttoleft.gif');
+  background-size: cover;
+  width: 150px;
+  height: 150px;
 }
 .growing-dancer {
-  background: url('assets/runtowardspikachu.gif');
-  background-size: 200px 200px;
+  background: url('assets/runtowardspikachu.gif') center center no-repeat;
+  background-size: contain;
   width: 200px;
-  height: 200px;
+  height: 300px;
+  -webkit-animation: Grow 3s;
+  animation: Grow 3s;
+}
+
+@-webkit-keyframes Grow{
+    0% {width: 60px; height: 80px;}
+    100% {width: 200px; height: 300px;}
+}
+
+@keyframes Grow{
+    0% {width: 60px; height: 80px;}
+    100% {width: 200px; height: 300px;}
+}
+
+.pokeball {
+  bottom: 0;
+  position: absolute;
+  z-index: -2;
+  width: 200px;
+}
+.pokeball img {
+  width: 100%;
+}
+
+.catchem {
+  display: block;
+  width: 600px;
+  margin: 0px auto;
+}
+.catchem img {
+  width: 100%;
+  margin-top: 140px;
 }
