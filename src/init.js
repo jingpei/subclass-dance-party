@@ -33,6 +33,7 @@ $(document).ready(function(){
       Math.random() * 1000
     );
     $('body').append(dancer.$node);
+    console.log(dancers.indexOf(dancer));
   });
 
   $(".makeLineButton").on("click", function(event){
@@ -48,12 +49,21 @@ $(document).ready(function(){
 
   $(document).on("click", ".dancer", function(event){
     if($isPokeballOpen === true){
-      console.log("clicked");
-      // $(this).css("width", "");
-      // clearInterval();
-      // $(this).attr('style', "top: " + $(this).css("top") + "; left: " + $(this).css("left") + "; border-radius: 0px; width: 50px; height: 50px; overflow: hidden; background-color: transparent;")
       $(this).stop();
       $(this).css({"width": "50px", "height": "50px", "bottom" : "70px", "top": "auto", "left": "70px"});
+      $(this).fadeOut("slow", function() {
+        $(this).remove();
+      });
+      for (var i = 0; i < window.dancers.length; i++) {
+        if($(this)[0] === window.dancers[i].$node[0]){
+          window.dancers.splice(i, 1);
+        }
+      };
+
+      if (window.dancers.length === 0) {
+        setTimeout( function(){ $pokeball.children('img').attr('src', 'assets/pokeball-closed.png')}, 1000);
+        $isPokeballOpen = false;
+      }
       // $(this).animate({top: "+=100"});
       // it needs to fly to bottom 100 left 100 from current position 
     }

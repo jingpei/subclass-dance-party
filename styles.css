@@ -25,14 +25,13 @@ body, a:link, a:visited, a:active{
 .topbar{
   /*height:32px;*/
   background-color: #555;
+  position: relative;
   z-index: 9999;
 }
 .title{
   background-color: #777;
 }
 .dancer{
-  /*border:10px solid red;*/
-  background: red;
   width: 30px;
   height: 30px;
   position:absolute;
@@ -46,13 +45,39 @@ body, a:link, a:visited, a:active{
   left: -50%;
 }
 .flyerdancer {
-  background: url('assets/flyrighttoleft.gif');
   background-size: cover;
   width: 150px;
   height: 150px;
+  -webkit-animation: BackAndForth 3s infinite;
+  animation: BackAndForth 3s infinite;
 }
+@-webkit-keyframes BackAndForth {
+  0% {margin-left: 0px;}
+  50% {margin-left: -300px;}
+  100% {margin-left: 0px;}
+}
+.flyerdancer span {
+  background-image: url('assets/flyrighttoleft.gif');
+  -webkit-animation: Flip 3s steps(1) infinite;
+  -webkit-animation-fill-mode: forwards;
+  animation: Flip 3s steps(15) infinite;
+  animation-fill-mode: forwards;
+  height: 100%;
+  width: 100%;
+  display: block;
+  background-size: cover;
+}
+@-webkit-keyframes Flip{
+  0% {background-image: url('assets/flyrighttoleft.gif');}
+  50% {background-image: url('assets/flylefttoright.gif');}
+}
+@keyframes Flip{
+  0% {left: 800;}
+  100% {left: 300;}
+}
+
 .growing-dancer {
-  background: url('assets/runtowardspikachu.gif') center center no-repeat;
+  background: url('assets/runtowardspikachu.gif') center top no-repeat;
   background-size: contain;
   width: 200px;
   height: 300px;
