@@ -5,6 +5,8 @@ body{
   margin: 0px;
   background-color:#444;
   font-size: 18px;
+  background: url('assets/bg.jpg') 0 0 no-repeat;
+  background-size: cover;
 }
 body, a:link, a:visited, a:active{
   color: #333;
@@ -40,7 +42,7 @@ body, a:link, a:visited, a:active{
   top: -50%;
   left: -50%;
 }
-.squaredancer {
+.flyerdancer {
   background: url('assets/flyingpikachu.gif');
   background-size: 200px 200px;
   width: 200px;

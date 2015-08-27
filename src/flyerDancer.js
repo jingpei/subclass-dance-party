@@ -1,12 +1,12 @@
-var makeSquareDancer = function(top, left, timeBetweenSteps){
+var makeFlyerDancer = function(top, left, timeBetweenSteps){
   makeDancer.call(this, top, left, timeBetweenSteps);
   // this.$node.css({"background-image": "../assets/flyingpikachu.gif", "width": "500" })
-  this.$node.addClass("squaredancer"); 
+  this.$node.addClass("flyerdancer"); 
 }
 
-makeSquareDancer.prototype = Object.create(makeDancer.prototype);
-makeSquareDancer.prototype.constructor = makeSquareDancer;
-makeSquareDancer.prototype.step = function(){
+makeFlyerDancer.prototype = Object.create(makeDancer.prototype);
+makeFlyerDancer.prototype.constructor = makeFlyerDancer;
+makeFlyerDancer.prototype.step = function(){
   var oldStep = makeDancer.prototype.step;
   oldStep.call(this);
 
