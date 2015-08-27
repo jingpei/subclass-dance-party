@@ -32,7 +32,6 @@ body, a:link, a:visited, a:active{
 .dancer{
   /*border:10px solid red;*/
   background: red;
-  border-radius:50%;
   width: 30px;
   height: 30px;
   position:absolute;
@@ -43,10 +42,10 @@ body, a:link, a:visited, a:active{
   left: -50%;
 }
 .flyerdancer {
-  background: url('assets/flyingpikachu.gif');
-  background-size: 200px 200px;
-  width: 200px;
-  height: 200px;
+  background: url('assets/flyrighttoleft.gif');
+  background-size: 150px 150px;
+  width: 150px;
+  height: 150px;
 }
 .growing-dancer {
   background: url('assets/runtowardspikachu.gif');
