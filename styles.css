@@ -7,21 +7,48 @@ body{
   font-size: 18px;
 }
 body, a:link, a:visited, a:active{
-  color: lightblue;
+  color: #333;
 }
-.title, .addDancerButton{
+.title, .addDancerButton, .makeLineButton{
   padding:5px 12px;
   float:right;
+  background: lightblue;
+  border-radius: 5px;
+  margin: 5px 5px 0 0;
+}
+.addDancerButton:hover, .makeLineButton:hover {
+  background-color: #fff;
 }
 .topbar{
-  height:32px;
+  /*height:32px;*/
   background-color: #555;
+  z-index: 9999;
 }
 .title{
   background-color: #777;
 }
 .dancer{
-  border:10px solid red;
-  border-radius:10px;
+  /*border:10px solid red;*/
+  background: red;
+  border-radius:50%;
+  width: 30px;
+  height: 30px;
   position:absolute;
+  z-index: -1;
+}
+.dancer img {
+  top: -50%;
+  left: -50%;
+}
+.squaredancer {
+  background: url('assets/flyingpikachu.gif');
+  background-size: 200px 200px;
+  width: 200px;
+  height: 200px;
+}
+.growing-dancer {
+  background: url('assets/runtowardspikachu.gif');
+  background-size: 200px 200px;
+  width: 200px;
+  height: 200px;
 }
