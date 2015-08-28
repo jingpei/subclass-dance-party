@@ -1,12 +1,12 @@
-var makeFlyerDancer = function(top, left, timeBetweenSteps){
-  makeDancer.call(this, top, left, timeBetweenSteps);
+var FlyerDancer = function(top, left, timeBetweenSteps){
+  Dancer.call(this, top, left, timeBetweenSteps);
   this.$node.addClass("flyerdancer motion"); 
   // this.$node.append("<span></span>")
 }
 
-makeFlyerDancer.prototype = Object.create(makeDancer.prototype);
-makeFlyerDancer.prototype.constructor = makeFlyerDancer;
-makeFlyerDancer.prototype.step = function(){
-  var oldStep = makeDancer.prototype.step;
+FlyerDancer.prototype = Object.create(Dancer.prototype);
+FlyerDancer.prototype.constructor = FlyerDancer;
+FlyerDancer.prototype.step = function(){
+  var oldStep = Dancer.prototype.step;
   oldStep.call(this);
 }
