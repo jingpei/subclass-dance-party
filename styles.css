@@ -63,6 +63,12 @@ body, a:link, a:visited, a:active{
   100% {top: 200;}
 }
 
+@keyframes FlyUp{
+  0% {top: 200px;}
+  50% {top: 0px;}
+  100% {top: 200;}
+}
+
 .running-dancer {
   background-size: cover;
   width: 150px;
@@ -78,6 +84,11 @@ body, a:link, a:visited, a:active{
   50% {margin-left: -600px;}
   100% {margin-left: 0px;}
 }
+@keyframes BackAndForth {
+  0% {margin-left: 0px;}
+  50% {margin-left: -600px;}
+  100% {margin-left: 0px;}
+}
 .running-dancer span {
   background-image: url('assets/runpikachurighttoleft.gif');
   height: 100%;
@@ -89,7 +100,7 @@ body, a:link, a:visited, a:active{
 .running-dancer.motion span {
   -webkit-animation: Flip 3s steps(1) infinite;
   -webkit-animation-fill-mode: forwards;
-  animation: Flip 3s steps(15) infinite;
+  animation: Flip 3s steps(1) infinite;
   animation-fill-mode: forwards;
 }
 @-webkit-keyframes Flip{
@@ -97,8 +108,8 @@ body, a:link, a:visited, a:active{
   50% {background-image: url('assets/runpikachulefttoright.gif');}
 }
 @keyframes Flip{
-  0% {left: 800;}
-  100% {left: 300;}
+  0% {background-image: url('assets/runpikachurighttoleft.gif');}
+  50% {background-image: url('assets/runpikachulefttoright.gif');}
 }
 
 .growing-dancer {
@@ -135,6 +146,12 @@ body, a:link, a:visited, a:active{
   transform-origin: center bottom;
 }
 @-webkit-keyframes Wobble{
+  0% {transform: rotate(30deg);}
+  25% {transform: rotate(-30deg);}
+  50% {transform: rotate(15deg);}
+  100% {transform: rotate(-15deg);}
+}
+@keyframes Wobble{
   0% {transform: rotate(30deg);}
   25% {transform: rotate(-30deg);}
   50% {transform: rotate(15deg);}
