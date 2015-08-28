@@ -32,5 +32,7 @@ makeDancer.prototype.pushToArray = function(input) {
 }
 
 makeDancer.prototype.lineUp = function(){
- this.$node.css({top: "0"});
+  var height = $(window).height() / 2;
+ this.$node.css({top: height - 100, width: 80, "max-height": 80});
+ this.$node.removeClass("motion");
 }

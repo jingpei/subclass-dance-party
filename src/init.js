@@ -37,9 +37,12 @@ $(document).ready(function(){
   });
 
   $(".makeLineButton").on("click", function(event){
+    var leftPos = 0;
     for (var i = 0; i < window.dancers.length; i++) {
       // window.dancers[i].$node.lineUp();
       window.dancers[i].lineUp();
+      window.dancers[i].$node.css({left: leftPos})
+      leftPos += $(window).width() / window.dancers.length;
     };
   });
 
@@ -65,6 +68,9 @@ $(document).ready(function(){
 
       if (window.dancers.length === 0) {
         setTimeout( function(){ $pokeball.children('img').attr('src', 'assets/pokeball-closed.png')}, 1000);
+        setTimeout( function(){ $pokeball.removeClass("motion") }, 2000);
+        setTimeout( function(){ $pokeball.addClass("motion")}, 2500);
+        setTimeout( function(){ $pokeball.removeClass("motion")}, 5000);
         $isPokeballOpen = false;
       }
       // $(this).animate({top: "+=100"});
@@ -74,8 +80,11 @@ $(document).ready(function(){
 
   $(".catchAll").on("click", function(event){
     $('body').append($catchEmAll);
+    $pokeball.addClass("motion");
     $catchEmAll.fadeIn(100);
-    $pokeball.children('img').attr('src', 'assets/pokeball-open.png');
+    setTimeout(function() {
+      $pokeball.children('img').attr('src', 'assets/pokeball-open.png');
+    }, 2000);
     $isPokeballOpen = true;
     $catchEmAll.fadeOut(3000);
   })

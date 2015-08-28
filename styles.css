@@ -35,7 +35,7 @@ body, a:link, a:visited, a:active{
   width: 30px;
   height: 30px;
   position:absolute;
-  z-index: 999;
+  /*z-index: 999;*/
 }
 .dancer:hover {
   cursor: pointer;
@@ -49,8 +49,8 @@ body, a:link, a:visited, a:active{
   background-image: url('assets/flylefttoright.gif');
   background-size: contain;
   background-repeat: no-repeat;
-  width: 200px;
-  height: 200px;
+  width: 100px;
+  height: 100px;
 
 }
 .flyerdancer.motion {
@@ -65,8 +65,8 @@ body, a:link, a:visited, a:active{
 
 .running-dancer {
   background-size: cover;
-  width: 222px;
-  height: 158px;
+  width: 150px;
+  height: 107px;
 }
 .running-dancer.motion {
   -webkit-animation: BackAndForth 3s infinite;
@@ -104,20 +104,20 @@ body, a:link, a:visited, a:active{
 .growing-dancer {
   background: url('assets/runtowardspikachu.gif') center top no-repeat;
   background-size: contain;
-  width: 200px;
-  height: 300px;
+  width: 100px;
+  height: 150px;
   -webkit-animation: Grow 3s;
   animation: Grow 3s;
 }
 
 @-webkit-keyframes Grow{
     0% {width: 60px; height: 80px;}
-    100% {width: 200px; height: 300px;}
+    100% {width: 100px; height: 150px;}
 }
 
 @keyframes Grow{
     0% {width: 60px; height: 80px;}
-    100% {width: 200px; height: 300px;}
+    100% {width: 100px; height: 150px;}
 }
 
 .pokeball {
@@ -128,18 +128,23 @@ body, a:link, a:visited, a:active{
 }
 .pokeball img {
   width: 100%;
-  -webkit-animation: Wobble 0.5s;
 }
 
+.pokeball.motion img {
+  -webkit-animation: Wobble steps(4) 2s;
+  transform-origin: center bottom;
+}
 @-webkit-keyframes Wobble{
   0% {transform: rotate(30deg);}
-  50% {transform: rotate(-30deg);}
-  100% {transform: rotate(30deg);}
+  25% {transform: rotate(-30deg);}
+  50% {transform: rotate(15deg);}
+  100% {transform: rotate(-15deg);}
 }
 
 .catchem {
   display: block;
   width: 600px;
+  z-index: 999;
   margin: 0px auto;
 }
 .catchem img {
