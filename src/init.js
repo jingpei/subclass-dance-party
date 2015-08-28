@@ -48,6 +48,7 @@ $(document).ready(function(){
 
   $(".clearAll").on("click", function(event){
     $('.dancer').remove();
+    window.dancers = [];
   });
 
   $(document).on("click", ".dancer", function(event){
